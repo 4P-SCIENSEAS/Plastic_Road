@@ -1,0 +1,45 @@
+---
+title: "Random draw NOAA"
+author: "Edgar Dusacre"
+date: "2/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Random draw for the survey transect of the NOAA protocol
+
+```{r, Possible survey transect}
+transect <- c("0-5", "5-10", "10-15", "15-20", "20-25", "25-30", "30-35", "35-40", "40-45", 
+              "45-50", "50-55", "55-60", "60-65", "65-70", "70-75", "75-80", "80-85", "85-90", "90-95", "95-100" )
+transect
+```
+
+Get a seed number
+```{r}
+seed <- runif(1, 0, 1000) 
+round(seed, 2)
+```
+
+Random draw template
+```{r}
+set.seed(60.17) #random number for the reproductibility --> to remember well the random draw
+                ##to choose the random number you the chunck line 9-10
+draw_nb <- sample(transect, 4, replace = F)
+draw_nb
+```
+
+Random draw of the 05/02/2022
+```{r}
+set.seed(60.17) 
+draw1 <- sample(transect, 4, replace = F)
+draw1
+
+set.seed(282.62) 
+draw2 <- sample(transect, 4, replace = F)
+draw2
+```
+
+
